@@ -1,0 +1,69 @@
+#include<stdio.h>
+int fac(int n1);
+int rev(int n2);
+int prime(int n3);
+
+int main () {
+  int x,n1,n2,n3;
+    printf("*--MENU--* \n");
+    printf(" 1. factorial \n");
+    printf(" 2. reverse of number \n");
+    printf(" 3. check prime number \n");
+    printf(" 4. exit \n");
+    printf("Enter the choice : ");
+    scanf("%d", &x);
+    switch(x){
+      case 1:  printf("Enter the value of n1: ");
+               scanf("%d", &n1);
+               int product=fac(n1);
+               printf("factorial of %d is %d",n1,product);
+               break; 
+      case 2:  printf("Enter the value of n2: ");
+               scanf("%d", &n2);
+               int reverse=rev(n2);
+               printf("reverse of %d is %d",n2,reverse);
+               break; 
+      case 3:   printf("Enter the value of n3 : ");
+                scanf("%d", &n3);  
+                if( prime(n3) == 1 ){
+                  printf("%d is a prime number",n3);
+                } else {
+                  printf("%d is not a prime number",n3);
+                }
+                break;   
+      default : printf(" exit "); 
+
+    }
+  }
+
+int fac(int n1){
+   int product=1; 
+  for (int i=1; i<=n1; i++){
+        product*=i;
+  }
+  return product;
+}
+
+int rev(int n2){
+  int ans=0;
+  while(n2>0){
+    int rem=n2%10;
+    ans=rem+ans*10;
+    n2=n2/10;
+  }
+  return ans;
+}
+
+int prime(int n3){
+  if(n3<=1){
+    return 0;
+  }
+  int i=2;
+  for (int i=2; i<n3; i++){
+        if(n3 % i == 0 ){
+          return 0;
+ }
+  }
+  return 1;
+}
+
