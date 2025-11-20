@@ -1,14 +1,14 @@
 #include<stdio.h>
 int main () {
-  int n,d,a=0;
+  int n,d,a;
   printf("Enter the value of n : ");
     scanf("%d", &n);
     printf("Enter the  common difference : ");
     scanf("%d", &d);
-    for(int i=0; i<=(n/d); i++ ){
-        int ans=0;
-        ans+= (a+i*d);
-        printf(" %d + ",ans);
+    printf("Enter the first term : ");
+    scanf("%d", &a);
+    for(int i=a; i<=n; i+=d ){
+        printf(" %d + ",i);
     }
     return 0;
   }
